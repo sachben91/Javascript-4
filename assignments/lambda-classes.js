@@ -20,7 +20,7 @@ class Instructor extends Person {
     this.catchPhrase = idetails.catchPhrase
   }
   demo(){
-    return(`Today we are learning ${speciality}`)
+    return(`Today we are learning ${this.speciality}`)
   }
   grade(studentobject){
     return(`${studentobject.name} receives a perfect score on ${studentobject.subject}`)
@@ -46,9 +46,9 @@ class Student extends Person{
   {
   return(`${studentobject.name} has submitted a PR for ${studentobject.subject} `)
   }
-  sprintChallenge(studentobject)
+  sprintChallenge(studentsubject)
   {
-    return(`${studentobject.name} has started ${studentobject.subject}`)
+    return(`${this.name} has started ${studentsubject}`)
   }
   }
 
@@ -62,8 +62,8 @@ class ProjectManager extends Instructor {
   standup(slack){
     return(`${this.name} announces to ${slack}, standup time!`)
   }
-  debugsCode(studentobject) {
-    return(`${name} debugs ${studentobject.name}'s code on ${studentobject.subject}`)
+  debugsCode(studentname,studentsubject) {
+    return(`${this.name} debugs ${studentname}'s code on ${studentsubject}`)
   }
 }
 const sachin = new Student({
@@ -81,7 +81,7 @@ const cam = new Instructor({
   age:28,
   location:'Cali',
   gender:'M',
-  specialty: 'FullStack',
+  speciality: 'FullStack',
   favLanguage: 'JS',
   catchPhrase: 'Yum, spicy cheese bread'
 })
@@ -97,3 +97,8 @@ const ron = new ProjectManager({
   catchPhrase:'Something in Japanese'
 })
 console.log(ron.standup("webpt5"));
+console.log(cam.demo())
+console.log(ron.debugsCode('Priya','JS'))
+console.log(sachin.sprintChallenge('CSS'))
+console.log(cam.grade({name:'Ronald', subject:'React'}))
+
