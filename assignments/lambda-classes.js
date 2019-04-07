@@ -62,38 +62,38 @@ class ProjectManager extends Instructor {
   standup(slack){
     return(`${this.name} announces to ${slack}, standup time!`)
   }
-  debugsCode(studentobject){
-    return(`${name} debugs ${studentobject.name}'s code on ${studentobject.subject}' )
+  debugsCode(studentobject) {
+    return(`${name} debugs ${studentobject.name}'s code on ${studentobject.subject}`)
   }
 }
-const sachin = new Student{
+const sachin = new Student({
   name: 'Sachin',
-  age:'27',
+  age: 27,
   location:'Houston',
   gender: 'M',
   previousbackground: 'marketing',
   classname: 'webpt5',
   favsubjects: ['CSS', 'JS']
-}
+})
 
-const cam = new Instructor{
+const cam = new Instructor({
   name: 'Cam',
-  age:'28',
+  age:28,
   location:'Cali',
   gender:'M',
   specialty: 'FullStack',
   favLanguage: 'JS',
   catchPhrase: 'Yum, spicy cheese bread'
-}
+})
 
-const ron = new ProjectManager{
+const ron = new ProjectManager({
   name:'Ron',
-  age:''26,
+  age: 26,
   location:'LA',
   gender:'M',
   gradClassname:'Webpt9',
   specialty:'JS',
   favInstructor:'Cam',
   catchPhrase:'Something in Japanese'
-}
+})
 console.log(ron.standup("webpt5"));
